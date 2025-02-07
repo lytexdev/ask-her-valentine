@@ -1,0 +1,104 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #eea6aa;
+    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+    overflow: hidden;
+    animation: bg-fade 3s ease-in-out;
+}
+
+@keyframes bg-fade {
+    0% { background-color: #eea6aa; }
+    50% { background-color: #ffcccc; }
+    100% { background-color: #fde2e4; }
+}
+
+.valentine-container {
+    text-align: center;
+    opacity: 0;
+    animation: fade-in 2s forwards;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.text-appear {
+    font-size: 2.8em;
+    color: #d92027;
+    font-weight: bold;
+    animation: text-pop 1.5s ease-in-out;
+}
+
+@keyframes text-pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-accept, .btn-deny {
+    font-size: 1.5em;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.btn-accept {
+    background-color: #ff165d;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.btn-accept:hover {
+    background-color: #e01450;
+    transform: scale(1.1);
+}
+
+.btn-deny {
+    background-color: #3d5af1;
+    color: white;
+    animation: wobble 1.5s infinite;
+}
+
+.btn-deny:hover {
+    background-color: #2a3ea0;
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-3deg); }
+}
+
+.image-container {
+    margin-top: 25px;
+    opacity: 0;
+    animation: zoom-effect 1.5s ease-in-out forwards;
+}
+
+@keyframes zoom-effect {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
