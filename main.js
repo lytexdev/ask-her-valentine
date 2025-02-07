@@ -16,15 +16,18 @@ let textIndex = 0;
 let acceptSize = 1;
 let moveSpeed = 4;
 let maxDistance = 120;
+let textSize = 2;
 
 function handleLoveNo() {
   textElement.textContent = textVariants[textIndex];
   textIndex = (textIndex + 1) % textVariants.length;
 
-  acceptSize += 0.15;
+  acceptSize += 4.15;
   acceptButton.style.transform = `scale(${acceptSize})`;
-}
 
+  textSize += 0.2;
+  textElement.style.fontSize = `${textSize}em`;
+}
 document.addEventListener("mousemove", (event) => {
   const mouseX = event.clientX;
   const mouseY = event.clientY;

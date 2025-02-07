@@ -74,6 +74,7 @@ body {
     background-color: #3d5af1;
     color: white;
     animation: wobble 1.5s infinite;
+    z-index: 1000;
 }
 
 .btn-deny:hover {
