@@ -1,18 +1,62 @@
+const denyButton = document.querySelector(".btn-deny");
+const acceptButton = document.querySelector(".btn-accept");
+const textElement = document.querySelector(".text-appear");
+
+const textVariants = [
+  "Are you sure pookie? 😳",
+  "Don't try to be a sigma...",
+  "Think again... 🤔",
+  "Don't break my heart 💔",
+  "Last chance! 😱",
+  "Seriously?! 😵",
+  "Okay... you win 😔",
+];
+
+let textIndex = 0;
+let acceptSize = 1;
+let moveSpeed = 4;
+let maxDistance = 120;
+
+function handleLoveNo() {
+  textElement.textContent = textVariants[textIndex];
+  textIndex = (textIndex + 1) % textVariants.length;
+
+  acceptSize += 0.15;
+  acceptButton.style.transform = `scale(${acceptSize})`;
+}
+
+document.addEventListener("mousemove", (event) => {
+  const mouseX = event.clientX;
+  const mouseY = event.clientY;
+  const buttonRect = denyButton.getBoundingClientRect();
+  const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+  const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+
+  const distanceX = mouseX - buttonCenterX;
+  const distanceY = mouseY - buttonCenterY;
+  const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
+
+  if (distance < maxDistance) {
+    const moveX = (distanceX / distance) * moveSpeed;
+    const moveY = (distanceY / distance) * moveSpeed;
+
+    let newX = denyButton.offsetLeft - moveX;
+    let newY = denyButton.offsetTop - moveY;
+
+    newX = Math.max(0, Math.min(window.innerWidth - buttonRect.width, newX));
+    newY = Math.max(0, Math.min(window.innerHeight - buttonRect.height, newY));
+
+    denyButton.style.position = "absolute";
+    denyButton.style.left = `${newX}px`;
+    denyButton.style.top = `${newY}px`;
+  }
+});
+
 function handleLoveYes() {
   document.body.classList.add("bg-change");
   setTimeout(() => {
-    window.location.href = "confirmation.html";
+    window.location.href = "confirm.html";
   }, 1000);
 }
 
-function handleLoveNo() {
-  const button = document.querySelector(".btn-deny");
-  button.style.position = "absolute";
-  button.style.transition = "all 0.5s ease";
-
-  const x = Math.random() * (window.innerWidth - button.clientWidth);
-  const y = Math.random() * (window.innerHeight - button.clientHeight);
-
-  button.style.left = `${x}px`;
-  button.style.top = `${y}px`;
-}
+denyButton.addEventListener("click", handleLoveNo);

@@ -4,10 +4,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #eea6aa;
+    background-color: #fde2e4;
     font-family: 'Poppins', sans-serif;
     flex-direction: column;
     overflow: hidden;
+    user-select: none;
+    cursor: pointer;
     animation: bg-fade 3s ease-in-out;
 }
 
