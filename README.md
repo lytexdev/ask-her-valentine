@@ -12,26 +12,5 @@ A interactive website to ask your girlfriend, boyfriend, or anyone else to be yo
 ## Preview
 https://lytexdev.github.io/ask-her-valentine/
 
-## Installation
-
-### Prerequisites
-- docker-compose
-
-**Clone the repository**
-```bash
-git clone https://github.com/lytexdev/ask-her-valentine.git
-cd ask-her-valentine
-```
-
-**Build and run the Docker image**
-```bash
-# with docker-compose-v2
-docker compose up -d
-
-# with docker-compose-v1
-docker-compose up -d
-```
-By default it runs on port 80
-
 ## License
 This project is licensed under MIT. See the [LICENSE](LICENSE) file for details.
