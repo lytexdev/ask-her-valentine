@@ -9,6 +9,9 @@ A interactive website to ask your girlfriend, boyfriend, or anyone else to be yo
 - **Animated Transitions** - smooth fade-ins, bounces, and pop effects
 - **Sweet Valentine Design** - soft colors, cute fonts, and lovely animations
 
+## Preview
+https://lytexdev.github.io/ask-her-valentine/
+
 ## Installation
 
 ### Prerequisites
