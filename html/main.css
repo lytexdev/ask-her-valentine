@@ -75,6 +75,8 @@ body {
     color: white;
     animation: wobble 1.5s infinite;
     z-index: 1000;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .btn-deny:hover {
